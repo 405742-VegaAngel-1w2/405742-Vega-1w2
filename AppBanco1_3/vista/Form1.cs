@@ -44,5 +44,11 @@ namespace AppBanco1_3
         {
 
         }
+
+        private void consultarCbuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultar  Consultar = new FrmConsultar();
+            Consultar.ShowDialog();
+        }
     }
 }

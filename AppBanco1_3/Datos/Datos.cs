@@ -51,6 +51,20 @@ namespace AppBanco1_3
             CerrarConexion();
             return dt;
         }
+        public DataTable SP_CONSULTAR_CLIENTE(Cliente client)
+        {
+            AbrirConexion();
+            comando = new SqlCommand("SP_CONSULTAR_CLIENTES", coneccion);
+            DataTable dt = new DataTable();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombre", client.Nombre);
+            comando.Parameters.AddWithValue("@apellido", client.Apellido);
+            comando.Parameters.AddWithValue("@dni", client.DNI);
+            dt.Load(comando.ExecuteReader());
+            CerrarConexion() ;
+            return dt;
+        }
+
         public bool SP_INSERTAR(Cliente client)
         {
             bool resultado = true;
