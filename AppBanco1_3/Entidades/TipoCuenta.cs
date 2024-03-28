@@ -19,5 +19,10 @@ namespace AppBanco1_3
             this.id = id;
 
         }
+        public TipoCuenta()
+        {
+            this.nombre = "Ahorro";
+            this.id = 100;
+        }
     }
 }
